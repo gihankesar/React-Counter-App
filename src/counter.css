@@ -1,0 +1,14 @@
+.counter {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.counter h1 {
+  font-size: 40px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
