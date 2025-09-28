@@ -1,14 +1,209 @@
-.counter {
-  text-align: center;
-  margin-top: 50px;
+/* Gradient Background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 50px;
+  margin: 0;
 }
 
-.counter h1 {
-  font-size: 40px;
+/* Card Container */
+div.container {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  width: 350px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Heading */
+h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Fruit List */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+/* Fade-out animation */
+li.removing {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(-20px); }
+}
+
+li {
+  background-color: #ecf0f1;
+  margin: 10px 0;
+  padding: 12px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  opacity: 1;
+}
+
+li:hover {
+  background-color: #3498db;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Fade-in animation for new fruits */
+li.new {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Input & Button */
+input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid #bdc3c7;
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+input:focus {
+  border-color: #3498db;
 }
 
 button {
-  margin: 5px;
+  background-color: #3498db;
+  color: white;
+  border: none;
   padding: 10px 20px;
-  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+/* Shake animation for invalid input */
+.shake {
+  animation: shake 0.3s;
+  border-color: #e74c3c !important;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Info paragraph */
+p {
+  color: #7f8c8d;
+  font-size: 14px;
+}
+/* Fade-out animation for removing fruits */
+li.removing {
+  animation: fadeOut 0.5s forwards;
+}
+
+/* Pop-in animation for new fruits */
+li.new {
+  animation: popIn 0.4s ease-out;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(-20px); }
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.5); }
+  80% { transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Input shake when duplicate fruit */
+input.shake {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+/* Optional: container styling */
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f0f8ff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px 12px;
+  margin: 5px 0;
+  background: #ffe4e1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+li:hover {
+  transform: scale(1.05);
+  background: #ffb6c1;
+}
+
+button {
+  padding: 8px 12px;
+  margin-left: 5px;
+  border: none;
+  background: #4caf50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  outline: none;
+  width: 60%;
 }
